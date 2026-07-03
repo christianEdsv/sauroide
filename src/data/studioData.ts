@@ -137,7 +137,7 @@ export const TEAM: TeamMember[] = [
     id: 'sauroide-mascot',
     name: 'Sauroide',
     role: 'Chief Executive Reptile (CER)',
-    avatar: '/images/team/sauroide-mascot.png',
+    avatar: '/images/team/mascot.jpg',
     bio: 'El cerebro estratégico del estudio. Encontrado en un fósil tecnológico, viste corbata de diseñador y anteojos intelectuales. Su rol principal es asegurarse de que el café esté caliente, programar bugs aleatorios y posar con actitud en el branding corporativo.',
     isMascot: true
   },
@@ -145,7 +145,7 @@ export const TEAM: TeamMember[] = [
     id: 'christian-hernandez',
     name: 'Christian Hernandez',
     role: 'Fundador y Programador Principal',
-    avatar: '/images/team/sofia.jpg',
+    avatar: '/images/team/me.jpeg',
     bio: 'Apasionado de la programación y el desarrollo de motores de física. Se asegura de que cada frame sea óptimo y de que los dinosaurios cibernéticos salten con la fluidez que los jugadores merecen.',
     socials: {
       twitter: 'https://x.com/christianEdSV',
