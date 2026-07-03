@@ -1,0 +1,215 @@
+.game-details-panel {
+  background-color: var(--color-surface);
+  color: var(--color-text-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid);
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: panelSlideIn var(--transition-normal) forwards;
+}
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px) rotate(1deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(-0.5deg);
+  }
+}
+
+.game-details-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ff5e5e;
+  border: var(--border-thin);
+  color: #000000;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 2px 2px 0px #000000;
+  transition: all var(--transition-bounce);
+  transform: rotate(-5deg);
+}
+
+.game-details-close-btn:hover {
+  background-color: #ff3333;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.game-details-close-btn:active {
+  transform: translate(2px, 2px) rotate(90deg);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+/* Media Display */
+.game-details-media {
+  width: 100%;
+  border: var(--border-thick);
+  background-color: #000000;
+  overflow: hidden;
+  box-shadow: var(--shadow-solid-sm);
+  transform: rotate(0.5deg);
+}
+
+.game-details-video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.game-details-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.game-details-hero-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* Thumbnail Gallery */
+.game-details-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.game-details-thumb {
+  flex: 1;
+  height: 60px;
+  border: var(--border-thin);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-bounce), border-color var(--transition-bounce);
+  transform: rotate(-1.5deg);
+}
+
+.game-details-thumb:nth-child(2n) {
+  transform: rotate(1.5deg);
+}
+
+.game-details-thumb:hover, .game-details-thumb.active {
+  transform: scale(1.05) rotate(0deg);
+  border-color: var(--color-secondary);
+}
+
+.game-details-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Info Elements */
+.game-details-title-wrapper {
+  border-bottom: var(--border-thin);
+  padding-bottom: 0.75rem;
+}
+
+.game-details-title {
+  font-size: 1.8rem;
+  color: var(--color-text-dark);
+}
+
+.game-details-genre {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.game-details-desc {
+  font-size: 0.95rem;
+  color: #38423c;
+  line-height: 1.6;
+}
+
+.game-details-section-title {
+  font-size: 1.15rem;
+  color: var(--color-text-dark);
+  margin-top: 0.5rem;
+  border-left: 4px solid var(--color-secondary);
+  padding-left: 0.5rem;
+}
+
+.game-details-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.game-details-features li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #4c5650;
+}
+
+.game-details-features li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+}
+
+/* Sidebar Info Block */
+.game-details-meta {
+  background-color: rgba(0, 0, 0, 0.03);
+  border: var(--border-thin);
+  padding: 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transform: rotate(-1deg);
+}
+
+.game-details-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.game-details-meta-label {
+  font-family: var(--font-title);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+}
+
+.game-details-meta-val {
+  font-weight: 600;
+}
+
+.game-details-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.game-details-actions .btn {
+  width: 100%;
+}

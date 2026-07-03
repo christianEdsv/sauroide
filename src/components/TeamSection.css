@@ -1,0 +1,275 @@
+.team-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .team-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Developer Menu Selector (Left Column) */
+.team-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.team-selector-btn {
+  background-color: var(--color-surface);
+  color: var(--color-text-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid-sm);
+  padding: 1.25rem;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  transform: rotate(1.5deg);
+}
+
+.team-selector-btn:nth-child(2n) {
+  transform: rotate(-1.5deg);
+}
+
+.team-selector-btn:hover {
+  transform: translate(-3px, -3px) scale(1.02);
+  box-shadow: var(--shadow-solid);
+  background-color: #ffffff;
+}
+
+.team-selector-btn.active {
+  background-color: var(--color-secondary);
+  color: #000000;
+  transform: translate(2px, 2px) rotate(0deg);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.team-selector-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #000000;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.team-selector-btn.active .team-selector-role {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* RPG Trading Card (Right Column) */
+.team-rpg-card {
+  background-color: var(--color-surface);
+  color: var(--color-text-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid);
+  padding: 2.5rem;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  position: relative;
+  animation: cardFadeIn var(--transition-normal) forwards;
+  transform: rotate(-0.5deg);
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotate(1deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-0.5deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .team-rpg-card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    text-align: center;
+  }
+}
+
+.team-rpg-avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.team-rpg-avatar-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border: var(--border-thick);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-solid-sm);
+  background-color: #0c100d;
+}
+
+.team-rpg-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-rpg-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-deep);
+  color: var(--color-primary);
+}
+
+.team-rpg-mascot-badge {
+  background-color: var(--color-secondary);
+  color: #000000;
+  border: var(--border-thin);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  box-shadow: 2px 2px 0px #000000;
+  text-align: center;
+}
+
+/* Info & Stats (Right Side of Card) */
+.team-rpg-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.team-rpg-header {
+  border-bottom: var(--border-thin);
+  padding-bottom: 0.5rem;
+}
+
+.team-rpg-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+}
+
+.team-rpg-role {
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.team-rpg-bio {
+  font-size: 0.95rem;
+  color: #38423c;
+  line-height: 1.5;
+}
+
+/* RPG Stats Grid */
+.team-rpg-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: var(--border-thin);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.team-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.team-stat-label {
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  font-weight: 800;
+  width: 90px;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+.team-stat-bar-container {
+  flex-grow: 1;
+  height: 14px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: var(--border-thin);
+  overflow: hidden;
+  position: relative;
+}
+
+.team-stat-bar {
+  height: 100%;
+  background-color: var(--color-primary);
+  box-shadow: inset -2px 0 0 rgba(0,0,0,0.15);
+}
+
+.team-rpg-card.mascot .team-stat-bar {
+  background-color: var(--color-secondary);
+}
+
+.team-stat-value {
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  font-weight: 800;
+  width: 30px;
+  text-align: right;
+}
+
+/* Fun stat block (Wildboy Inspired) */
+.team-rpg-fun-stat {
+  border-top: var(--border-thin);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #4a544e;
+}
+
+.team-fun-label {
+  font-weight: 600;
+}
+
+.team-fun-value {
+  font-family: var(--font-title);
+  font-weight: 800;
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+}
+
+.team-rpg-socials {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .team-rpg-socials {
+    justify-content: center;
+  }
+}

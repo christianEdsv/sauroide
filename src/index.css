@@ -1,0 +1,309 @@
+:root {
+  /* Fonts */
+  --font-title: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Colors */
+  --color-bg: #0b0f0c; /* Muy oscuro con matiz verde */
+  --color-surface: #fbf9f4; /* Crema retro claro estilo comic */
+  --color-surface-dark: #141b16; /* Paneles oscuros estilo cómic */
+  --color-primary: #87b37a; /* Verde Sauroide */
+  --color-primary-bright: #a5d898;
+  --color-secondary: #f19e38; /* Naranja Acento */
+  --color-secondary-bright: #ffb85d;
+  --color-brand-deep: #193425;
+  --color-text-dark: #121613; /* Texto principal sobre crema */
+  --color-text-light: #fbf9f4; /* Texto principal sobre oscuro */
+  --color-text-muted: #627266;
+  --color-hero-green: var(--color-primary-bright);
+  
+  /* Outline & Shadow Tokens (Drinkbox Style) */
+  --border-thick: 3px solid #000000;
+  --border-thin: 2px solid #000000;
+  --shadow-solid: 8px 8px 0px #000000;
+  --shadow-solid-sm: 4px 4px 0px #000000;
+  --shadow-solid-lg: 12px 12px 0px #000000;
+
+  /* Transitions */
+  --transition-bounce: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-normal: 0.25s ease-out;
+
+  /* Layout */
+  --container-max-width: 1200px;
+}
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Retro Block Scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  border-left: var(--border-thin);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border: var(--border-thin);
+  box-shadow: inset -2px -2px 0px rgba(0,0,0,0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-bounce);
+}
+
+/* Layout Components */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: 7rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4.5rem 0;
+  }
+}
+
+/* Skewed / Rotated Layout Elements (Drinkbox Style) */
+.skewed-left {
+  transform: rotate(-1.5deg);
+}
+
+.skewed-right {
+  transform: rotate(1.5deg);
+}
+
+.skewed-hover:hover {
+  transform: scale(1.03) rotate(1.5deg);
+}
+
+.skewed-hover:nth-child(2n):hover {
+  transform: scale(1.03) rotate(-1.5deg);
+}
+
+/* Solid 3D Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #000000;
+  background-color: var(--color-surface);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid-sm);
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-solid);
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary-bright);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-bright);
+}
+
+.btn-outline {
+  background-color: var(--color-surface);
+  color: #000000;
+}
+
+/* Numbered Section Divider (Wildboy Style) */
+.numbered-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.numbered-number {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  background-color: #000000;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-solid-sm);
+  transform: rotate(-3deg);
+}
+
+.numbered-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.numbered-title {
+  font-size: 2.2rem;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 576px) {
+  .numbered-title {
+    font-size: 1.6rem;
+  }
+}
+
+.numbered-line {
+  height: 4px;
+  background-color: #000000;
+  flex-grow: 1;
+  position: relative;
+}
+
+.numbered-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-secondary);
+  border: var(--border-thin);
+}
+
+/* ==========================================================================
+   Modo Claro (Light Theme) Overrides (Drinkbox Retro Style)
+   ========================================================================== */
+body.light-theme {
+  --color-bg: #f5f3eb; /* Fondo crema claro retro */
+  --color-surface: #ffffff; /* Paneles blanco puro para contraste */
+  --color-surface-dark: #ebe7dd; /* Cajas secundarias ligeramente más oscuras */
+  --color-text-light: #121613; /* Texto sobre el fondo se vuelve oscuro */
+  --color-text-muted: #4e5c52; /* Gris verdoso oscuro */
+  --color-hero-green: var(--color-primary);
+}
+
+/* Ajustes de componentes específicos en modo claro */
+body.light-theme .navbar.scrolled {
+  background-color: rgba(245, 243, 235, 0.95);
+}
+
+body.light-theme .navbar::after {
+  background: linear-gradient(180deg, rgba(245, 243, 235, 0.95) 0%, transparent 100%);
+}
+
+body.light-theme .navbar-logo,
+body.light-theme .navbar-link,
+body.light-theme .navbar-toggle {
+  background-color: #ffffff;
+}
+
+body.light-theme .navbar-link:hover,
+body.light-theme .navbar-link.active {
+  background-color: #000000;
+  color: var(--color-primary-bright);
+}
+
+body.light-theme .navbar-link.active {
+  color: var(--color-secondary);
+}
+
+body.light-theme #sobre-nosotros {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+body.light-theme #nosotros {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+body.light-theme .team-rpg-stats {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .form-control {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.light-theme .form-control:focus {
+  background-color: #ffffff;
+}
+
+body.light-theme .footer {
+  background-color: #ebe7dd;
+  color: #4e5c52;
+}
+
+body.light-theme .footer-logo-title {
+  color: #000000;
+}
+
+body.light-theme .footer-bottom {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+

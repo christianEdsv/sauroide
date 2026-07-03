@@ -1,0 +1,322 @@
+/* Override Vite's root constraints to allow full-width sections */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Hero Section (Drinkbox & Wildboy Style) */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  overflow: hidden;
+  padding-top: 80px; /* navbar offset */
+  transition: background-color var(--transition-normal);
+}
+
+/* Comic Halftone Grid Background */
+.hero-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(135, 179, 122, 0.08) 15%, transparent 16%),
+    radial-gradient(rgba(241, 158, 56, 0.05) 15%, transparent 16%);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  z-index: 1;
+}
+
+.hero-glow-effect {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(241, 158, 56, 0.08) 0%, rgba(135, 179, 122, 0.05) 60%, transparent 100%);
+  filter: blur(60px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.5rem;
+  background-color: var(--color-surface);
+  color: #000000;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid-sm);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 0.85rem;
+  transform: rotate(-2deg);
+}
+
+@media (max-width: 992px) {
+  .hero-badge {
+    align-self: center;
+  }
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  line-height: 1.05;
+  font-weight: 900;
+  color: var(--color-text-light);
+  transform: rotate(-1.5deg);
+  transition: color var(--transition-normal);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  max-width: 550px;
+}
+
+@media (max-width: 992px) {
+  .hero-tagline {
+    margin: 0 auto;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.hero-actions .btn {
+  transform: rotate(2deg);
+}
+
+.hero-actions .btn:nth-child(2n) {
+  transform: rotate(-2deg);
+}
+
+.hero-actions .btn:hover {
+  transform: translate(-3px, -3px) rotate(0deg);
+}
+
+/* Floating Mascot Graphic (Drinkbox Offset Style) */
+.hero-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-logo-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(8px 8px 0px #000000);
+  border: var(--border-thick);
+  background-color: var(--color-surface);
+  border-radius: 16px;
+  padding: 1rem;
+  transform: rotate(-4deg);
+  animation: float 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+}
+
+.hero-logo-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px dashed rgba(241, 158, 56, 0.4);
+  border-radius: 20px;
+  animation: rotateRing 40s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* About Philosophy Cards */
+.about-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+  .about-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  color: var(--color-text-dark);
+  border: var(--border-thick);
+  padding: 0.8rem 1.5rem;
+  box-shadow: var(--shadow-solid-sm);
+  transform: rotate(1.5deg);
+}
+
+.stat-item:nth-child(2n) {
+  transform: rotate(-1.5deg);
+}
+
+.stat-number {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4a544e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Wildboy-Style Sliding Layout for Games */
+.games-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  align-items: start;
+}
+
+.games-grid-container.panel-open {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+@media (max-width: 992px) {
+  .games-grid-container.panel-open {
+    grid-template-columns: 1fr;
+  }
+}
+
+.games-list-subgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@media (max-width: 992px) {
+  .games-list-subgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .games-list-subgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Shrink subgrid and enable vertical scrolling when active details panel is open */
+.games-grid-container.panel-open .games-list-subgrid {
+  grid-template-columns: 1fr;
+  max-height: 750px;
+  overflow-y: auto;
+  padding-right: 1.25rem;
+  border-right: var(--border-thin);
+}
+
+@media (max-width: 992px) {
+  .games-grid-container.panel-open .games-list-subgrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: var(--border-thin);
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .games-grid-container.panel-open .games-list-subgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Light Theme Overrides */
+body.light-theme .hero-bg-grid {
+  background-image: 
+    radial-gradient(rgba(135, 179, 122, 0.15) 15%, transparent 16%),
+    radial-gradient(rgba(241, 158, 56, 0.12) 15%, transparent 16%);
+}
