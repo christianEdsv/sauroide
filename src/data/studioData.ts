@@ -146,7 +146,7 @@ export const TEAM: TeamMember[] = [
     name: 'Christian Hernandez',
     role: 'Fundador y Programador Principal',
     avatar: '/images/team/me.jpeg',
-    bio: 'Apasionado de la programación y el desarrollo de motores de física. Se asegura de que cada frame sea óptimo y de que los dinosaurios cibernéticos salten con la fluidez que los jugadores merecen.',
+    bio: 'Apasionado de la programación y del desarrollo de motores de física. Se asegura de que cada frame sea óptimo y de que los dinosaurios cibernéticos salten con la fluidez que los jugadores merecen.',
     socials: {
       twitter: 'https://x.com/christianEdSV',
       github: 'https://github.com/christianEdsv',
