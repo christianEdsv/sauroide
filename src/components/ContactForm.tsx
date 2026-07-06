@@ -10,8 +10,6 @@ export const ContactForm: React.FC = () => {
         return <Twitter size={22} />;
       case 'instagram':
         return <Instagram size={22} />;
-      case 'youtube':
-        return <Youtube size={22} />;
       case 'github':
         return <Github size={22} />;
       case 'discord':

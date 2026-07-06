@@ -10,6 +10,8 @@ export const Footer: React.FC = () => {
     switch (platform.toLowerCase()) {
       case 'twitter':
         return <Twitter size={20} />;
+      case 'instagram':
+        return <Instagram size={20} />;
       case 'github':
         return <Github size={20} />;
       case 'linkedin':
@@ -21,7 +23,7 @@ export const Footer: React.FC = () => {
       case 'steam':
         return <Gamepad2 size={20} />;
       default:
-        return <Instagram size={20} />;
+        return <Gamepad2 size={20} />;
     }
   };
 
