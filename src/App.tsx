@@ -1,7 +1,8 @@
 //Cuando los juegos estén listos, se puede reactivar la sección de juegos y el panel de detalles. Por ahora, se ha comentado para mantener la página limpia y enfocada en la filosofía y el equipo del estudio.
 //useEffect
 import { useState } from 'react';
-import { Gamepad2, Play, Users, ArrowRight } from 'lucide-react';
+//Play
+import { Gamepad2, Users, ArrowRight } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 //import { GameCard } from './components/GameCard';
 //import { GameDetailsPanel } from './components/GameDetailsPanel';
@@ -89,12 +90,14 @@ function App() {
               {STUDIO_INFO.tagline}
             </p>
             <div className="hero-actions">
+              {/*
               <button 
                 className="btn btn-primary" 
                 onClick={() => scrollToSection('juegos')}
               >
                 <Play size={18} fill="#000" /> Ver Juegos
               </button>
+              */}
               <button 
                 className="btn btn-outline" 
                 onClick={() => scrollToSection('contacto')}
