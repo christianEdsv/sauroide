@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Twitter, Github, Linkedin, Youtube, Gamepad2, MessageSquare, Heart } from 'lucide-react';
+import { Twitter, Github, Linkedin, Youtube, Instagram, MessageSquare, Heart, Gamepad2 } from 'lucide-react';
 import { STUDIO_INFO, SOCIAL_LINKS } from '../data/studioData';
 import './Footer.css';
 
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
       case 'steam':
         return <Gamepad2 size={20} />;
       default:
-        return <Gamepad2 size={20} />;
+        return <Instagram size={20} />;
     }
   };
 

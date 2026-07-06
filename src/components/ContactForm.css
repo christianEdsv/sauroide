@@ -1,6 +1,6 @@
 .contact-layout {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 3rem;
   margin-top: 3rem;
   align-items: start;
@@ -32,53 +32,96 @@
 .contact-form-title {
   font-size: 1.6rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-dark);
+  font-family: var(--font-title);
+  text-transform: uppercase;
+}
+
+/* Social Grid Links (Drinkbox Style) */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.social-block-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--color-text-dark);
-}
-
-.form-group {
-  margin-bottom: 1.25rem;
-}
-
-.form-label {
-  display: block;
-  font-family: var(--font-title);
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  background-color: rgba(0, 0, 0, 0.03);
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: var(--color-surface-dark);
+  color: var(--color-text-light);
   border: var(--border-thick);
-  border-radius: 6px;
+  box-shadow: var(--shadow-solid-sm);
+  transition: all var(--transition-bounce);
+  transform: rotate(1.5deg);
+  cursor: pointer;
+}
+
+.social-block-link:nth-child(2n) {
+  transform: rotate(-1.5deg);
+}
+
+body.light-theme .social-block-link {
+  background-color: var(--color-surface);
   color: var(--color-text-dark);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+}
+
+.social-block-link:hover {
+  transform: scale(1.04) rotate(0deg) translateY(-3px);
+  box-shadow: var(--shadow-solid);
+  background-color: var(--color-secondary);
+  color: #000000;
+}
+
+.social-block-link:hover .social-block-icon {
+  background-color: #000000;
+  color: var(--color-secondary-bright);
+}
+
+.social-block-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primary);
+  color: #000000;
+  border: var(--border-thin);
+  border-radius: 6px;
+  flex-shrink: 0;
   transition: all var(--transition-bounce);
 }
 
-.form-control:focus {
-  outline: none;
-  border-color: var(--color-secondary);
-  box-shadow: var(--shadow-solid-sm);
-  background-color: #ffffff;
-  transform: translate(-2px, -2px);
+.social-block-text {
+  display: flex;
+  flex-direction: column;
 }
 
-textarea.form-control {
-  resize: vertical;
-  min-height: 130px;
+.social-block-name {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
 
+.social-block-action {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: 0.15rem;
+}
+
+/* Contact Info Column */
 .contact-info-column {
   display: flex;
   flex-direction: column;
@@ -98,7 +141,7 @@ textarea.form-control {
 .info-card-title {
   font-size: 1.25rem;
   font-weight: 800;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   color: var(--color-secondary);
   border-bottom: var(--border-thin);
   padding-bottom: 0.5rem;
@@ -108,11 +151,7 @@ textarea.form-control {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.25rem;
-}
-
-.info-item:last-child {
-  margin-bottom: 0;
+  margin-top: 1.5rem;
 }
 
 .info-icon {
@@ -131,57 +170,4 @@ textarea.form-control {
 .info-text p {
   font-size: 0.9rem;
   color: #4a544e;
-}
-
-/* Newsletter card */
-.newsletter-card {
-  background: linear-gradient(135deg, rgba(135, 179, 122, 0.05), rgba(241, 158, 56, 0.05));
-  background-color: var(--color-surface);
-  transform: rotate(-1deg);
-}
-
-.newsletter-card p {
-  font-size: 0.9rem;
-  margin-bottom: 1.25rem;
-  color: #4a544e;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 0.5rem;
-}
-
-@media (max-width: 576px) {
-  .newsletter-form {
-    flex-direction: column;
-  }
-}
-
-/* Success / Error Messages */
-.form-status {
-  text-align: center;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.form-status-icon {
-  color: var(--color-primary);
-}
-
-.form-status-icon.error {
-  color: #ff3333;
-}
-
-.form-status-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.form-status-desc {
-  font-size: 0.95rem;
-  color: #4a544e;
-  max-width: 320px;
 }

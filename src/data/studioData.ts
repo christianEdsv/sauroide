@@ -52,10 +52,11 @@ export const STUDIO_INFO: StudioInfo = {
 
 export const SOCIAL_LINKS = [
   { platform: 'Twitter', url: 'https://twitter.com/SauroideStudio', icon: 'Twitter' },
+  { platform: 'Instagram', url: 'https://instagram.com/SauroideStudio', icon: 'Instagram' },
   //{ platform: 'Discord', url: 'https://discord.gg/SauroideStudio', icon: 'MessageSquare' },
   //{ platform: 'YouTube', url: 'https://youtube.com/c/SauroideStudio', icon: 'Youtube' },
   //{ platform: 'Steam', url: 'https://store.steampowered.com/publisher/SauroideStudio', icon: 'Gamepad' },
-  { platform: 'GitHub', url: 'https://github.com/SauroideStudio', icon: 'Github' }
+  //{ platform: 'GitHub', url: 'https://github.com/SauroideStudio', icon: 'Github' }
 ];
 
 export const GAMES: Game[] = [
